@@ -1,6 +1,6 @@
 # GeoJSON Diff
 
-*A Ruby library to diff GeoJSON files*
+*A Ruby library for diffing GeoJSON files*
 
 ## Requirements
 

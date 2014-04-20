@@ -14,7 +14,7 @@ Here's [a diff](https://github.com/benbalter/congressional-districts/commit/2233
 
 [![Illinois 4th Congressional district](https://f.cloud.github.com/assets/282759/2090660/63f2e45a-8e97-11e3-9d8b-d4c8078b004e.gif)](https://github.com/benbalter/congressional-districts/commit/2233c76ca5bb059582d796f053775d8859198ec5#diff-85d2c1b78193e963475250414e57940b)
 
-GeoJSON diff will even diff properties within the geometry when they change:
+GeoJSON Diff will even diff properties within the geometry when they change:
 
 [![Updating a property](https://f.cloud.github.com/assets/282759/2022569/dfaf96b8-884f-11e3-95ca-8f54c60a2ccf.png)](https://github.com/DU-GIS/Geojson_Data/commit/042e86e417a7fb9e43504640046339e82618e4c2#diff-0cca6b7c0e294c8d3e9d9b8090ab9e24)
 

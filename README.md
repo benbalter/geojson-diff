@@ -41,7 +41,7 @@ Every geometry within the resulting GeoJSON files will be appended with standard
 
 * `type` - this field contains either `added`, `removed`, or `unchanged` and describes the state of the geometry as it relates to the initial GeoJSON file.
 * `added`, `removed`, `changed` - these fields contain an array of property keys. If a given key is in the `added` array, that property existed in the resulting geometry, but not in the initial geometry. Likewise, if a key is in `removed` array it existed in the initial geometry, but not the resulting geometry, and if the key is in the `changed` array, it existed in both the initial and resulting geometry, but was changed.
-* For changed properties, the values of the `after` GeoJSON file will be marked up as a [diffy](https://github.com/samg/diffy#html-output) `:html` diff and will represent the inline diff of the changed value.
+* For changed properties, the values of the `after` GeoJSON file will be marked up as a [diffy `:html` diff](https://github.com/samg/diffy#html-output) and will represent the inline diff of the changed value.
 
 ## Development
 

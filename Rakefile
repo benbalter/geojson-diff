@@ -1,5 +1,5 @@
 require 'rake/testtask'
-require_relative 'lib/geojson_diff'
+require 'geojson-diff'
 
 task :default => [:test]
 

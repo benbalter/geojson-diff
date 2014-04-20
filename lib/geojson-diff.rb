@@ -2,7 +2,7 @@ require 'rgeo'
 require 'rgeo/geo_json'
 require 'diffy'
 require_relative 'rgeo/geojson'
-require_relative 'geojson_diff/property_diff'
+require_relative 'geojson-diff/property-diff'
 
 ENV["GEOS_LIBRARY_PATH"] ||= File.expand_path("lib", `geos-config --prefix`.strip)
 

@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
 
   s.files = [
-    "lib/geojson_diff.rb",
-    "lib/geojson_diff/property_diff.rb",
+    "lib/geojson-diff.rb",
+    "lib/geojson-diff/property-diff.rb",
     "lib/rgeo/geojson.rb"
   ]
   s.require_paths = ["lib"]

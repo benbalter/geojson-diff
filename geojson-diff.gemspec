@@ -1,8 +1,10 @@
+require_relative 'lib/geojson-diff/version'
+
 Gem::Specification.new do |s|
   s.name = "geojson-diff"
   s.summary = "A Ruby library for diffing GeoJSON files"
   s.description = "GeoJSON Diff takes two GeoJSON files representing the same geometry (or geometries) at two points in time, and generates three GeoJSON files represented the added, removed, and unchanged geometries."
-  s.version = "0.0.1"
+  s.version = GeojsonDiff::VERSION
   s.authors = ["Ben Balter"]
   s.email = "ben.balter@github.com"
   s.homepage = "https://github.com/benbalter/geojson-diff"

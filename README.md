@@ -2,6 +2,14 @@
 
 *A Ruby library for diffing GeoJSON files*
 
+## Installation
+
+`gem install geojson-diff`
+
+or add the following to your project's Gemfile:
+
+`gem 'geojson-diff'`
+
 ## Requirements
 
 GeoJSON Diff is bassed on [rgeo](https://github.com/dazuma/rgeo), [rgeo-geojson](https://github.com/dazuma/rgeo-geojson), [geos](http://trac.osgeo.org/geos/), [ffi-geos](https://github.com/dark-panda/ffi-geos), and [diffy](https://github.com/samg/diffy).

@@ -10,7 +10,7 @@ Then, add the following to your project's Gemfile and run `bundle install`:
 
 `gem 'geojson-diff'`
 
-**Pro-Tip:** Because the library depends on [GEOS](http://trac.osgeo.org/geos/), which can be finicky on some systems, the set-it-and-forget-it way to get everything set up is to copy-and-paste and run the commands in [script/bootstrap](scrpt/bootstrap), which will install GEOS and configure the necessary environmental values.
+**Pro-Tip:** Because the library depends on [GEOS](http://trac.osgeo.org/geos/), which can be finicky on some systems, the set-it-and-forget-it way to get everything set up is to copy-and-paste and run the commands in [script/bootstrap](script/bootstrap), which will install GEOS and configure the necessary environmental values.
 
 ## Requirements
 

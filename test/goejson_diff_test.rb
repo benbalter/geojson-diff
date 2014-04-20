@@ -36,9 +36,9 @@ class GeojsonDiffTest < Test::Unit::TestCase
 
   def verify_property_diff(before,after,key,type)
     diff = GeojsonDiff::PropertyDiff.new(before,after)
-    assert_equal true, diff.properties.key?("_geojson_diff"), "_geojson_diff key does not exist in #{diff}"
-    assert_equal true, diff.properties["_geojson_diff"].key?(type.to_sym), "_geojson_diff.#{type} does not exist in #{diff}"
-    assert_equal true, diff.properties["_geojson_diff"][type.to_sym].include?(key.to_sym), "_geojson_diff.#{type} does not include #{key} in #{diff}"
+    assert_equal true, diff.diff.key?("_geojson_diff"), "_geojson_diff key does not exist in #{diff}"
+    assert_equal true, diff.diff["_geojson_diff"].key?(type.to_sym), "_geojson_diff.#{type} does not exist in #{diff}"
+    assert_equal true, diff.diff["_geojson_diff"][type.to_sym].include?(key.to_sym), "_geojson_diff.#{type} does not include #{key} in #{diff}"
     diff
   end
 

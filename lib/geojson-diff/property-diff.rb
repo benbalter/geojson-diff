@@ -35,21 +35,19 @@ class GeojsonDiff
     end
 
     def diff
-      @properties = {}
-      @before.merge(@after).each { |key,value| @properties.merge! diffed_property(key) }
-      @properties.merge({ GeojsonDiff::META_KEY => @meta })
+      @diff ||= begin
+        @properties = {}
+        @before.merge(@after).each { |key,value| @properties.merge! diffed_property(key) }
+        @properties.merge({ GeojsonDiff::META_KEY => @meta })
+      end
     end
 
     def to_json
-      properties.to_json
+      diff.to_json
     end
 
     def to_s
-      properties.to_s
-    end
-
-    def properties
-      @diff ||= diff
+      diff.to_s
     end
   end
 end

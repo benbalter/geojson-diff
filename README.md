@@ -4,7 +4,7 @@
 
 ## Overview
 
-GeoJSON Diff takes two GeoJSON files representing the same geometry (or geometries) at two points in time, and generates three GeoJSON files represented the `added`, `removed`, and `unchanged` geometries.
+GeoJSON Diff takes two GeoJSON files representing the same geometry (or geometries) at two points in time, and generates three GeoJSON files representing the `added`, `removed`, and `unchanged` geometries.
 
 These three GeoJSON files can be used to generate a visual representation of the changes (proposed or realized), e.g., by coloring the added elements green and the removed elements red. See [diffable, more customizable maps](https://github.com/blog/1772-diffable-more-customizable-maps) for the Gem in action.
 

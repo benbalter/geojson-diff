@@ -4,13 +4,13 @@
 
 ## Installation
 
-Add the following to your project's Gemfile:
+If you're on OS X and have Homebrew installed, you'll first want to run `brew install geos` to install the GEOS geospatial library. On other systems, consult [the GEOS installation instructions](http://trac.osgeo.org/geos/).
+
+Then, add the following to your project's Gemfile:
 
 `gem 'geojson-diff'`
 
-If you're on OS X and have Homebrew installed, you'll first want to run `brew install geos` to install the GEOS geospatial library. On other systems, consult [the GEOS installation instructions](http://trac.osgeo.org/geos/).
-
-*Pro-Tip:* Because the library depends on [GEOS](http://trac.osgeo.org/geos/), which can be finicky on some systems, the set-it-and-forget-it way to get everything set up is to copy-and-paste and run the commands in [script/bootstrap](scrpt/bootstrap), which will install GEOS and configure the necessary environmental values.
+**Pro-Tip:** Because the library depends on [GEOS](http://trac.osgeo.org/geos/), which can be finicky on some systems, the set-it-and-forget-it way to get everything set up is to copy-and-paste and run the commands in [script/bootstrap](scrpt/bootstrap), which will install GEOS and configure the necessary environmental values.
 
 ## Requirements
 

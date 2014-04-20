@@ -14,14 +14,14 @@ Gem::Specification.new do |s|
     "lib/rgeo/geojson.rb"
   ]
   s.require_paths = ["lib"]
-  s.add_dependency( "rgeo")
-  s.add_dependency( "rgeo-geojson" )
-  s.add_dependency( "ffi-geos" )
-  s.add_dependency( "diffy" )
+  s.add_dependency( "rgeo", '~> 0.3.20')
+  s.add_dependency( "rgeo-geojson", '~> 0.2.3' )
+  s.add_dependency( "ffi-geos", '~> 0.5.0' )
+  s.add_dependency( "diffy", '~> 3.0.4' )
 
-  s.add_development_dependency( "rake" )
-  s.add_development_dependency( "mocha" )
-  s.add_development_dependency( "bundler" )
-  s.add_development_dependency( "pry" )
+  s.add_development_dependency( "rake", '~> 10.3.1' )
+  s.add_development_dependency( "mocha", '~> 1.0.0' )
+  s.add_development_dependency( "bundler",'~> 1.5.3' )
+  s.add_development_dependency( "pry", '~> 0.9.12.6' )
 
 end

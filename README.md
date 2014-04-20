@@ -61,7 +61,13 @@ Add the following to your project's Gemfile and run `bundle install`:
 
 ### Pro-Tip
 
-Because the library depends on [GEOS](http://trac.osgeo.org/geos/), which can be finicky on some systems, the set-it-and-forget-it way to get everything set up is to copy-and-paste and run the commands in [script/bootstrap](script/bootstrap), which will install GEOS and configure the necessary environmental values.
+Because the library depends on [GEOS](http://trac.osgeo.org/geos/), which can be finicky on some systems, the set-it-and-forget-it way to get everything set up is to:
+
+1. Add `gem 'geojson-diff'` to your project's Gemfile
+2. Copy the contents of [script/bootstrap](script/bootstrap)
+3. `cd` to your project's root directory and paste/run the commands
+
+This will install GEOS and configure the necessary environmental values.
 
 ## Development
 

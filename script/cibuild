@@ -9,3 +9,8 @@ export RACK_ROOT=$(cd "$(dirname $0)"/.. && pwd)
 
 script/bootstrap
 bundle exec rake test
+
+echo "Attempting to build the gem..."
+gem build geojson-diff.gemspec
+
+echo "Done!"

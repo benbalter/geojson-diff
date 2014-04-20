@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-
 which -s geos-config
 if [[ $? != 0 ]] ; then
   which -s brew

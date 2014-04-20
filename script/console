@@ -2,6 +2,4 @@
 
 set -e
 
-export GEOS_LIBRARY_PATH=`geos-config --prefix`/lib
-
 bundle exec pry -r "./lib/geojson_diff.rb"

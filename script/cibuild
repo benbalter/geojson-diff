@@ -6,7 +6,6 @@ date "+%H:%M:%S"
 
 export RACK_ENV="test"
 export RACK_ROOT=$(cd "$(dirname $0)"/.. && pwd)
-export GEOS_LIBRARY_PATH=`geos-config --prefix`/lib
 
 script/bootstrap
 bundle exec rake test

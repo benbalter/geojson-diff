@@ -4,6 +4,8 @@ require 'diffy'
 require_relative 'rgeo/geojson'
 require_relative 'geojson_diff/property_diff'
 
+ENV["GEOS_LIBRARY_PATH"] ||= File.expand_path("lib", `geos-config --prefix`.strip)
+
 class GeojsonDiff
 
   KEY = '_geojson_diff'

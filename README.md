@@ -6,7 +6,7 @@
 
 If you're on OS X and have Homebrew installed, you'll first want to run `brew install geos` to install the GEOS geospatial library. On other systems, consult [the GEOS installation instructions](http://trac.osgeo.org/geos/).
 
-Then, add the following to your project's Gemfile:
+Then, add the following to your project's Gemfile and run `bundle install`:
 
 `gem 'geojson-diff'`
 

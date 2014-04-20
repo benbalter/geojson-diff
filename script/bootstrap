@@ -1,1 +1,22 @@
+#!/bin/sh
+
+set -e
+
+which -s geos-config
+if [[ $? != 0 ]] ; then
+  which -s brew
+  if [[ $? != 0 ]] ; then
+    echo "It looks like Homebrew (brew.sh) isn't installed."
+    echo "You're on your own for installing GEOS (trac.osgeo.org/geos)"
+    exit 1
+  else
+    brew install geos
+  fi
+else
+  echo "Using GEOS `geos-config --version`"
+fi
+
+export GEOS_LIBRARY_PATH=`geos-config --prefix`/lib
+bundle config --local build.rgeo --with-geos-dir="$GEOS_LIBRARY_PATH" > /dev/null 2>&1
+
 bundle install

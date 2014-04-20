@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Bootstrapping GeoJSON Diff..."
+
 which -s geos-config
 if [[ $? != 0 ]] ; then
   which -s brew
@@ -8,6 +10,7 @@ if [[ $? != 0 ]] ; then
     echo "You're on your own for installing GEOS (trac.osgeo.org/geos)"
     exit 1
   else
+    echo "Installing GEOS..."
     brew install geos
   fi
 else
@@ -17,4 +20,7 @@ fi
 export GEOS_LIBRARY_PATH=`geos-config --prefix`/lib
 bundle config --local build.rgeo --with-geos-dir="$GEOS_LIBRARY_PATH" > /dev/null 2>&1
 
+echo "Bundle installing..."
 bundle install
+
+echo "Done."

@@ -1,4 +1,4 @@
-require_relative 'lib/geojson-diff/version'
+require File.expand_path('lib/geojson-diff/version', File.dirname(__FILE__))
 
 Gem::Specification.new do |s|
   s.name = "geojson-diff"

@@ -27,6 +27,14 @@ diff.unchanged
 
 For practical examples, take a look at the [test/fixtures directory](test/fixtures).
 
+## Displaying the resulting GeoJSON
+
+Every geometry within the resulting GeoJSON files will be appended with standard GeoJSON properties in the `_geojson_diff` namespace.
+
+* `type` - this field contains either `added`, `removed`, or `unchanged` and describes the state of the geometry as it relates to the initial GeoJSON file.
+* `added`, `removed`, `unchanged` - these fields contain an array of property keys. If a given key is in the `added` array, that property existed in the resulting geometry, but not in the initial geometry. Likewise, if a key is in `removed` array it existed in the initial geometry, but not the resulting geometry, and if the key is in the `unchanged` array, it existed in both the initial and resulting geometry.
+
+
 ## Development
 
 ### Bootstrapping a local development environment

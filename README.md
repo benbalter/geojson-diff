@@ -10,6 +10,8 @@ or add the following to your project's Gemfile:
 
 `gem 'geojson-diff'`
 
+*Note:* If you're on OS X and have Homebrew installed, you'll also want to run `brew install geos` to install the GEOS geospatial library. On other systems, consult [the GEOS installation instructions](http://trac.osgeo.org/geos/).
+
 ## Requirements
 
 GeoJSON Diff is bassed on [rgeo](https://github.com/dazuma/rgeo), [rgeo-geojson](https://github.com/dazuma/rgeo-geojson), [geos](http://trac.osgeo.org/geos/), [ffi-geos](https://github.com/dark-panda/ffi-geos), and [diffy](https://github.com/samg/diffy).
@@ -56,6 +58,12 @@ Every geometry within the resulting GeoJSON files will be appended with standard
 ### Development console
 
 `script/console`
+
+## Troubleshooting GEOS
+
+On some environments, you'll need to run the following command to properly configure your execution environment for Ruby to find GEOS:
+
+`export GEOS_LIBRARY_PATH=`geos-config --prefix`/lib`
 
 ## License
 

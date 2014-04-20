@@ -9,7 +9,7 @@ ENV["GEOS_LIBRARY_PATH"] ||= File.expand_path("lib", `geos-config --prefix`.stri
 
 class GeojsonDiff
 
-  KEY = '_geojson_diff'
+  META_KEY = '_geojson_diff'
 
   def initialize(before, after)
     @before = ensure_feature_collection(RGeo::GeoJSON.decode(before, :json_parser => :json))
@@ -65,9 +65,9 @@ class GeojsonDiff
   def diff_feature(before_feature, after_feature, type="difference")
     geometry = diff_geometry(before_feature, after_feature, type)
     return nil if geometry.nil? || geometry.is_empty?
-    properties = { KEY => {} }
+    properties = { META_KEY => {} }
     properties.merge! diff_properties(before_feature, after_feature, type)
-    properties[KEY].merge!({type: type})
+    properties[META_KEY].merge!({type: type})
     RGeo::GeoJSON::Feature.new(geometry,nil,properties)
   end
 

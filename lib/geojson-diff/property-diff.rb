@@ -37,7 +37,7 @@ class GeojsonDiff
     def diff
       @properties = {}
       @before.merge(@after).each { |key,value| @properties.merge! diffed_property(key) }
-      @properties.merge({ GeojsonDiff::KEY => @meta })
+      @properties.merge({ GeojsonDiff::META_KEY => @meta })
     end
 
     def to_json

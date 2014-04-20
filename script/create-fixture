@@ -1,0 +1,37 @@
+#! /usr/bin/env ruby
+
+# Usage: script/create-fixure name-of-fixture
+#
+# Ensures before.geojson and after.geojson exist in test/fixtures/name-of-fixture
+#
+# If they do, saves geojson-diff job output for added, removed, and unchanged
+
+$LOAD_PATH.unshift(File.expand_path('../lib', File.dirname(__FILE__)))
+
+require 'geojson-diff'
+require 'fileutils'
+
+fixture = ARGV[0]
+fixture_dir = File.expand_path( "../../test/fixtures/#{fixture}", __FILE__ )
+
+FileUtils.mkdir_p(fixture_dir)
+
+null_island = RGeo::Geos.factory.point(0,0)
+empty_feature_collection = RGeo::GeoJSON::FeatureCollection.new([RGeo::GeoJSON::Feature.new(null_island)])
+
+["before", "after"].each do |file|
+  next if File.exist?("#{fixture_dir}/#{file}.geojson")
+  File.open("#{fixture_dir}/#{file}.geojson", 'w') { |file| file.write(empty_feature_collection.to_json) }
+  puts "#{fixture_dir}/#{file}.geojson initialized with null island."
+end
+
+before = File.open("#{fixture_dir}/before.geojson").read
+after = File.open("#{fixture_dir}/after.geojson").read
+diff = GeojsonDiff.new(before, after)
+["added", "removed", "unchanged"].each do |type|
+  file = "#{fixture_dir}/#{type}.geojson"
+  File.open(file, 'w') { |file| file.write(diff.send(type).to_json) }
+  puts "#{file} diff created."
+end
+
+puts "Done."

@@ -6,7 +6,17 @@
 
 GeoJSON Diff takes two GeoJSON files representing the same geometry (or geometries) at two points in time, and generates three GeoJSON files represented the `added`, `removed`, and `unchanged` geometries.
 
-These three GeoJSON files can be used to generate a visual representation of the changes (proposed or realized), e.g., by coloring the added elements green and the removed elements red. See [diffable, more customizable maps](https://github.com/blog/1772-diffable-more-customizable-maps) for an example use case.
+These three GeoJSON files can be used to generate a visual representation of the changes (proposed or realized), e.g., by coloring the added elements green and the removed elements red. See [diffable, more customizable maps](https://github.com/blog/1772-diffable-more-customizable-maps) for the Gem in action.
+
+### GeoJSON Diff in the wild
+
+Here's [a diff](https://github.com/benbalter/congressional-districts/commit/2233c76ca5bb059582d796f053775d8859198ec5) of Illinois's famed 4th congressional district after undergoing redistricting in 2011:
+
+[![Illinois 4th Congressional district](https://f.cloud.github.com/assets/282759/2090660/63f2e45a-8e97-11e3-9d8b-d4c8078b004e.gif)](https://github.com/benbalter/congressional-districts/commit/2233c76ca5bb059582d796f053775d8859198ec5#diff-85d2c1b78193e963475250414e57940b)
+
+GeoJSON diff will even diff properties within the geometry when they change:
+
+[![Updating a property](https://f.cloud.github.com/assets/282759/2022569/dfaf96b8-884f-11e3-95ca-8f54c60a2ccf.png)](https://github.com/DU-GIS/Geojson_Data/commit/042e86e417a7fb9e43504640046339e82618e4c2#diff-0cca6b7c0e294c8d3e9d9b8090ab9e24)
 
 ## Usage
 

@@ -2,4 +2,4 @@
 
 set -e
 
-bundle exec pry -r "./lib/geojson_diff.rb"
+bundle exec pry -r "./lib/geojson-diff.rb"

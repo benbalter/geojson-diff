@@ -2,7 +2,7 @@
 
 *A Ruby library for diffing GeoJSON files*
 
-[![Gem Version](https://badge.fury.io/rb/geojson-diff.svg)](http://badge.fury.io/rb/geojson-diff)
+[![Gem Version](https://badge.fury.io/rb/geojson-diff.svg)](http://badge.fury.io/rb/geojson-diff) [![Build Status](https://travis-ci.org/benbalter/geojson-diff.svg?branch=master)](https://travis-ci.org/benbalter/geojson-diff)
 
 ## Overview
 

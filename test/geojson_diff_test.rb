@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'json'
 
 class GeojsonDiffTest < Test::Unit::TestCase
 
@@ -31,14 +30,6 @@ class GeojsonDiffTest < Test::Unit::TestCase
       expected = File.open("#{@fixtures_dir}/#{fixture}-diff/#{type}.geojson").read.strip
       assert_equal expected, diff.send(type).to_json, "`#{type}.geojson` output does not match"
     end
-    diff
-  end
-
-  def verify_property_diff(before,after,key,type)
-    diff = GeojsonDiff::PropertyDiff.new(before,after)
-    assert_equal true, diff.diff.key?("_geojson_diff"), "_geojson_diff key does not exist in #{diff}"
-    assert_equal true, diff.diff["_geojson_diff"].key?(type.to_sym), "_geojson_diff.#{type} does not exist in #{diff}"
-    assert_equal true, diff.diff["_geojson_diff"][type.to_sym].include?(key.to_sym), "_geojson_diff.#{type} does not include #{key} in #{diff}"
     diff
   end
 
@@ -75,42 +66,13 @@ class GeojsonDiffTest < Test::Unit::TestCase
     assert_equal RGeo::GeoJSON::FeatureCollection, @diff.send("ensure_feature_collection", feature_collection).class
   end
 
-  def test_inject_render_type
+  def test_inject_diff_type
     @outputs.each do |type|
       data = JSON.parse @diff.send(type).to_json
       data["features"].each do |feature|
         assert_equal type, feature["properties"]["_geojson_diff"]["type"]
       end
     end
-  end
-
-  def test_added_property
-    before = { foo: "bar" }
-    after = { foo: "bar", some_field: "baz" }
-    verify_property_diff before, after, "some_field", "added"
-  end
-
-  def test_removed_property
-    before = { foo: "bar", some_field: "baz" }
-    after = { foo: "bar" }
-    verify_property_diff before, after, "some_field", "removed"
-  end
-
-  def test_changed_property
-    before = { foo: "bar" }
-    after = { foo: "baz" }
-    diff = verify_property_diff before, after, "foo", "changed"
-    assert_equal "<div class=\"diff\">\n  <ul>\n    <li class=\"del\"><del>ba<strong>r</strong></del></li>\n    <li class=\"ins\"><ins>ba<strong>z</strong></ins></li>\n  </ul>\n</div>\n", diff.properties[:foo]
-  end
-
-  def test_unchanged_property
-    before = { foo: "bar" }
-    after = { foo: "bar" }
-    diff = GeojsonDiff::PropertyDiff.new(before,after)
-    assert_equal "bar", diff.properties[:foo]
-    assert_equal false, diff.properties["_geojson_diff"][:changed].include?("foo")
-    assert_equal false, diff.properties["_geojson_diff"][:added].include?("foo")
-    assert_equal false, diff.properties["_geojson_diff"][:removed].include?("foo")
   end
 
   # Fixture tests in alpha order, because OCD

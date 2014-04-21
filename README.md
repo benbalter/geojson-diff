@@ -2,6 +2,8 @@
 
 *A Ruby library for diffing GeoJSON files*
 
+[![Gem Version](https://badge.fury.io/rb/geojson-diff.svg)](http://badge.fury.io/rb/geojson-diff)
+
 ## Overview
 
 GeoJSON Diff takes two GeoJSON files representing the same geometry (or geometries) at two points in time, and generates three GeoJSON files representing the `added`, `removed`, and `unchanged` geometries.

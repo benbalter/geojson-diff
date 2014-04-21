@@ -1,8 +1,11 @@
 langauage: ruby
-
+rvm:
+  - 2.1.0
+  
 before_install:
+  - sudo apt-get update
+
+install:
   - sudo apt-get install libgeos-dev
 
 script: "script/cibuild"
-
-# GEOS/Travis build script via https://github.com/robe2/travis-build-geos

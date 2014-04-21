@@ -1,27 +1,11 @@
 langauage: ruby
-
-env:
-  matrix:
-    - GEOS_VERSION=3.4.2
-    - GEOS_VERSION=3.3.8
-    - GEOS_VERSION=3.2.3
-
+rvm:
+  - 2.1.0
+  
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -qq sendfile build-essential flex autoconf libtool gfortran xsltproc libproj-dev dblatex
-  - git config --global user.name "Build package TravisCI"
-  - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
 
-compiler:
-  - gcc
+install:
+  - sudo apt-get install libgeos-dev
 
-script:
-  - export LSB_INFO=$( lsb_release -rs )_$( lsb_release -ms )
-  - wget -q http://download.osgeo.org/geos/geos-$GEOS_VERSION.tar.bz2
-  - tar xvjf geos-$GEOS_VERSION.tar.bz2
-  - ( cd geos-$GEOS_VERSION && ./configure --prefix=/home/travis/geos-$GEOS_VERSION && make && make install )
-  - ldconfig
-  - tar cvzf geos-$GEOS_VERSION.travis.$LSB_INFO.tar.gz /home/travis/geos-$GEOS_VERSION
-  - "script/cibuild"
-
-# GEOS/Travis build script via https://github.com/robe2/travis-build-geos
+script: "script/cibuild"

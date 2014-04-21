@@ -1,6 +1,7 @@
 require 'rgeo'
 require 'rgeo/geo_json'
 require 'diffy'
+require 'json'
 require_relative 'rgeo/geojson'
 require_relative 'geojson-diff/property-diff'
 require_relative 'geojson-diff/version'

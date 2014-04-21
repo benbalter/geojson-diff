@@ -32,6 +32,7 @@ class PropertyDiffTest < Test::Unit::TestCase
     expected = "<div class=\"diff\">\n  <ul>\n    <li class=\"del\"><del>ba<strong>r</strong></del></li>\n    <li class=\"ins\"><ins>ba<strong>z</strong></ins></li>\n  </ul>\n</div>\n"
     diff = verify_property_diff before, after, "foo", "changed"
     assert_equal expected, diff.properties[:foo]
+    assert_equal(expected, diff.send(:diffed_value, :foo))
     assert_equal({ :foo => expected }, diff.send(:diffed_property, :foo))
   end
 

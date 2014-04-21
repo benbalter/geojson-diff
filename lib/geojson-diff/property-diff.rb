@@ -96,7 +96,7 @@ class GeojsonDiff
         { key => @before[key] }
       elsif changed? key
         @meta[:changed].push key
-        { key => diff_value(key) }
+        { key => diffed_value(key) }
       else # unchanged
         { key => @after[key] }
       end
@@ -107,7 +107,7 @@ class GeojsonDiff
     # key - the property key to diff
     #
     # Returns (string) the Diffy representation of the changed property
-    def diff_value(key)
+    def diffed_value(key)
       Diffy::Diff.new(@before[key], @after[key]).to_s(:html)
     end
   end

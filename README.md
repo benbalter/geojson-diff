@@ -12,7 +12,7 @@ These three GeoJSON files can be used to generate a visual representation of the
 
 ### GeoJSON Diff in the wild
 
-See GeoJSON diff in action! Here's [a diff](https://github.com/benbalter/congressional-districts/commit/2233c76ca5bb059582d796f053775d8859198ec5) of Illinois's famed 4th congressional district after undergoing redistricting in 2011:
+See GeoJSON diff in action! Here's [a diff of Illinois's famed 4th congressional district](https://github.com/benbalter/congressional-districts/commit/2233c76ca5bb059582d796f053775d8859198ec5) after undergoing redistricting in 2011:
 
 [![Illinois 4th Congressional district](https://f.cloud.github.com/assets/282759/2090660/63f2e45a-8e97-11e3-9d8b-d4c8078b004e.gif)](https://github.com/benbalter/congressional-districts/commit/2233c76ca5bb059582d796f053775d8859198ec5#diff-85d2c1b78193e963475250414e57940b)
 

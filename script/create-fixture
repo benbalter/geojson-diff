@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby
 
-# Usage: script/create-fixure name-of-fixture
+# Usage: script/create-fixture name-of-fixture
 #
 # Ensures before.geojson and after.geojson exist in test/fixtures/name-of-fixture
 #

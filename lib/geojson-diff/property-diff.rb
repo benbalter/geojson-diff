@@ -82,7 +82,7 @@ class GeojsonDiff
     private
 
     # Diffs an individual key/value pair
-    # Also propegates @meta arrays
+    # Also propagates @meta arrays
     #
     # key - the property key to diff
     #
@@ -102,7 +102,7 @@ class GeojsonDiff
       end
     end
 
-    # Diffs an indivual changed value
+    # Diffs an individual changed value
     #
     # key - the property key to diff
     #

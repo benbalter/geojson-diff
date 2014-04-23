@@ -43,7 +43,7 @@ class GeojsonDiff
     RGeo::GeoJSON::FeatureCollection.new([geometry])
   end
 
-  # Find index of indentical feature within a feature collection based on geometry
+  # Find index of identical feature within a feature collection based on geometry
   #
   # from_feature - the needle feature
   # to - the haystack featurecollection

@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email = "ben.balter@github.com"
   s.homepage = "https://github.com/benbalter/geojson-diff"
   s.licenses = ["MIT"]
-  
+
   s.files = [
     "lib/geojson-diff.rb",
     "lib/geojson-diff/property-diff.rb",
@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.add_dependency( "rgeo", '~> 0.3')
   s.add_dependency( "rgeo-geojson", '~> 0.2' )
-  s.add_dependency( "ffi-geos", '~> 0.5' )
+  s.add_dependency( "ffi-geos", '~> 1.0' )
   s.add_dependency( "diffy", '~> 3.0' )
 
   s.add_development_dependency( "rake", '~> 10.3' )
